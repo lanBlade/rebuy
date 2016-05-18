@@ -1,0 +1,72 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font;
+  padding-top: 60px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darken($primary-light, 15%);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba($primary-dark, .7);
+  }
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba($primary-dark, .95);
+  color: $primary-light-hover;
+}
+
+::-moz-selection {
+  background: rgba($primary-dark, .95);
+  color: $primary-light-hover;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.Panel {
+  @extend .panel;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .Content:after, .Content:before {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+
+.Breadcrumb {
+  @extend .breadcrumb;
+  padding: 1.5em .5em;
+  margin: 20px 0;
+  background: #fefefe;
+  
+  li {
+    color: #ccc;
+    
+    a {
+      color: rgba($primary-dark, .6);
+    }
+    
+    &.active {
+      color: #ccc !important;
+    }
+  }
+}
